@@ -26,7 +26,7 @@
 - (IBAction)dealButtonTapped:(id)sender;
 - (IBAction)hitButtonTapped:(id)sender;
 
--(void)updateUI:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
+-(void)updateUICardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
 -(void)deal;
 -(void)hit;
 

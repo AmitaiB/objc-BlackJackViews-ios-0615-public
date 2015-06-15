@@ -28,22 +28,10 @@
             }
         }
     }
-        //        for (NSInteger i = 0; i < decks; i++)
-//    [self addStandardDeck];
-//        _fullDeck = self.isFull;
         
     return self;
 }
 
-//-(instancetype)init {
-//    return [self initMultipleDecks:1];
-//}
-
-//Adds 13 cards for each of the 4 suits.
-//-(void)addStandardDeck {
-//        }
-//    }
-//}
 
 -(BOOL)isFull {
     return ([self.cards count] == 52);

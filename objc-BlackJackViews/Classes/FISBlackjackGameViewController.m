@@ -17,53 +17,66 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
+    self.cardLabelsDict = @{@1:self.card1,
+                            @2:self.card2,
+                            @3:self.card3,
+                            @4:self.card4,
+                            @5:self.card5};
     [self deal];
-    _cardLabelsDict = @{@1:_card1,
-                        @2:_card2,
-                        @3:_card3,
-                        @4:_card4,
-                        @5:_card5};
+    [self.updateUI];
 }
 
--(void)updateUI:(FISBlackjackGameViewController*)myBJviewController {
-    for (NSUInteger i = 0; i < [myBlackjackGame.hand count]; i++) {
-        [self updateUICardLabel:self.cardLabelsDict[@(i)] withCard: myBlackjackGame.hand[i]];
+-(void)updateUI {
+    [self updateUICardLabels];
+    [self updateUIStatusLabels];
+}
+
+//Updates all the cards.
+-(void)updateUICardLabels {
+    for (NSUInteger i = 0; i < [self.blackjackGame.hand count]; i++) {
+        [self updateUICardLabel:self.cardLabelsDict[@(i)] withCard: self.blackjackGame.hand[i]];
     }
 }
 
--(void)updateUICardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
+// Updates one card.
+-(void)updateUICardLabel:(UILabel *)myLabel withCard:(FISPlayingCard *)card {
     myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// Updates both status labels.
+-(void)updateUIStatusLabels {
+    [self updateUIScoreLabel];
+    [self updateUIResultLabel];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)updateUIScoreLabel {
+    self.scoreLabel.text = [NSString stringWithFormat:@"%@", self.blackjackGame.handScore];
 }
-*/
 
+-(void)updateUIResultLabel {
+    if (self.blackjackGame.isBusted) {
+        self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
+    }
+    if (self.blackjackGame.isBlackjack) {
+        self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
+    }
+}
 
 -(void)deal {
+    [self.blackjackGame setupNewRound];
     [self.blackjackGame deal];
     [self updateUICardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
     [self updateUICardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+    [self.blackjackGame tallyHandScore];
 }
 
 -(void)hit {
     [self.blackjackGame hit];
-    NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
+  /*  NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
     FISPlayingCard *newCard = [self.blackjackGame.hand lastObject];
     UILabel *labelToUpdate = self.cardLabelsDict[@(numberOfCardsInHand)];
     [self updateUICardLabel:labelToUpdate withCard:newCard];
-}
+*/}
 
 - (IBAction)dealButtonTapped:(id)sender {
     NSLog(@"dealButton works!");
@@ -75,4 +88,18 @@
     [self.blackjackGame hit];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 @end

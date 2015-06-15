@@ -30,7 +30,8 @@
 
 //Make sure the hand is empty, then deal.
 -(void)deal {
-    [self setupNewRound];
+//    [self setupNewRound];
+    [self.hand removeAllObjects];
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //1
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //2
     [self tallyHandScore];
@@ -49,8 +50,8 @@
 }
 
 -(void)setHand:(NSMutableArray*)newHand {
-    [self setupNewRound];
     [self.hand addObjectsFromArray:newHand];
+    [self setupNewRound];
     [self.playingCardDeck.cards removeObjectsInArray:newHand];
     [self tallyHandScore];
 }

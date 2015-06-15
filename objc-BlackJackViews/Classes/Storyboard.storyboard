@@ -8,7 +8,7 @@
         <!--FISBlackjackGameViewController-->
         <scene sceneID="j9i-Qh-rrF">
             <objects>
-                <viewController title="FISBlackjackGameViewController" id="8Is-ps-l78" sceneMemberID="viewController">
+                <viewController title="FISBlackjackGameViewController" id="8Is-ps-l78" customClass="FISBlackjackGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQl-90-Uz4"/>
                         <viewControllerLayoutGuide type="bottom" id="hlm-HM-HT4"/>
@@ -26,6 +26,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="49" y="515" width="49" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="hitButtonTapped:" destination="8Is-ps-l78" eventType="touchUpInside" id="cYp-HM-HKy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwA-pm-hoG">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -36,6 +39,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="289" y="515" width="35" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="dealButtonTapped:" destination="8Is-ps-l78" eventType="touchUpInside" id="DVP-MB-fYM"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-Qe-9ci">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -136,6 +142,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="card1" destination="wJ7-iK-8iu" id="1Wg-pW-dMQ"/>
+                        <outlet property="card2" destination="X61-i5-fA5" id="90L-Mx-xEd"/>
+                        <outlet property="card3" destination="eNJ-Qe-9ci" id="Il1-zf-clU"/>
+                        <outlet property="card4" destination="AbM-Qc-wAc" id="YJ8-r7-1Nv"/>
+                        <outlet property="card6" destination="7bK-bj-394" id="8L1-LB-bv2"/>
+                        <outlet property="resultLabel" destination="3j0-9U-m1Q" id="S0V-lF-iFV"/>
+                        <outlet property="scoreLabel" destination="z2L-QS-Z68" id="vBM-NF-C8D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nS-Sa-Sw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

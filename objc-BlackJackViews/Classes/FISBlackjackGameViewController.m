@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)hitButtonTapped:(id)sender {
+}
+
+- (IBAction)dealButtonTapped:(id)sender {
+}
 @end

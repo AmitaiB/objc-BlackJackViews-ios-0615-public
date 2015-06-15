@@ -25,6 +25,12 @@
                         @5:_card5};
 }
 
+-(void)updateUI:(FISBlackjackGameViewController*)myBJviewController {
+    for (NSUInteger i = 0; i < [myBlackjackGame.hand count]; i++) {
+        [self updateUICardLabel:self.cardLabelsDict[@(i)] withCard: myBlackjackGame.hand[i]];
+    }
+}
+
 -(void)updateUICardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
     myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
 }

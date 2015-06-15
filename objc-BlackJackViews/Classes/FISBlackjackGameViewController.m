@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.blackjackGame = [[FISBlackjackGame alloc] init];
+    [self.blackjackGame deal];
+    
+    [self updateCardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
+    [self updateCardLabel:self.card1 withCard:self.blackjackGame.hand[1]];
+    
+}
+
+-(void)updateCardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
+    myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,8 +44,10 @@
 */
 
 - (IBAction)hitButtonTapped:(id)sender {
+    NSLog(@"hitButton works!");
 }
 
 - (IBAction)dealButtonTapped:(id)sender {
+    NSLog(@"dealButton works!");
 }
 @end

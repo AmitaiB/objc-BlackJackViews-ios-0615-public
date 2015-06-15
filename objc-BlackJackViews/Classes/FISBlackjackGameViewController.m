@@ -31,6 +31,21 @@
     [self updateUI_StatusLabels];
 }
 
+-(void)deal {
+    [self.blackjackGame setupNewRound];
+    [self.blackjackGame deal];
+    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
+    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+    [self.blackjackGame tallyHandScore];
+    [self updateUI];
+}
+
+-(void)hit {
+    [self.blackjackGame hit];
+    [self updateUI];
+
+}
+
 //Updates all the cards.
 -(void)updateUI_CardLabels {
     for (NSUInteger i = 0; i < [self.blackjackGame.hand count]; i++) {
@@ -61,22 +76,6 @@
         self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
     }
 }
-
--(void)deal {
-    [self.blackjackGame setupNewRound];
-    [self.blackjackGame deal];
-    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
-    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
-    [self.blackjackGame tallyHandScore];
-}
-
--(void)hit {
-    [self.blackjackGame hit];
-  /*  NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
-    FISPlayingCard *newCard = [self.blackjackGame.hand lastObject];
-    UILabel *labelToUpdate = self.cardLabelsDict[@(numberOfCardsInHand)];
-    [self updateUICardLabel:labelToUpdate withCard:newCard];
-*/}
 
 - (IBAction)dealButtonTapped:(id)sender {
     NSLog(@"dealButton works!");

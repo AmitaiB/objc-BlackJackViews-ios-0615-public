@@ -31,6 +31,9 @@
 -(void)updateUI__ScoreLabel;
 -(void)updateUI__ResultLabel;
 
+-(void)resetUI;
+-(void)resetUI_CardLabels;
+-(void)resetUI_StatusLabels;
 
 - (IBAction)dealButtonTapped:(id)sender;
 -(void)deal;

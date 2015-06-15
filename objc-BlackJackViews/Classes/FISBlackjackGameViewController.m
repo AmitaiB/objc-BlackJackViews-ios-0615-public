@@ -22,14 +22,15 @@
                             @3:self.card3,
                             @4:self.card4,
                             @5:self.card5};
-    [self deal];
+//    [self deal];
     [self updateUI];
 }
 
--(void)updateUI {
-    [self updateUI_CardLabels];
-    [self updateUI_StatusLabels];
+-(void)resetUI {
+    [self resetUI_CardLabels];
+    [self resetUI_StatusLabels];
 }
+
 
 -(void)deal {
     [self.blackjackGame setupNewRound];
@@ -42,8 +43,26 @@
 
 -(void)hit {
     [self.blackjackGame hit];
+    [self.blackjackGame tallyHandScore];
     [self updateUI];
+    
+}
 
+-(void)updateUI {
+    [self updateUI_CardLabels];
+    [self updateUI_StatusLabels];
+}
+
+-(void)resetUI_CardLabels {
+    for (UILabel *card in self.cardLabelsDict) {
+        card.text = @"";
+        card.hidden = YES;
+    }
+}
+
+-(void)resetUI_StatusLabels {
+    self.scoreLabel.text = @"%@";
+    self.resultLabel.text = @"";
 }
 
 //Updates all the cards.
@@ -56,6 +75,7 @@
 // Updates one card.
 -(void)updateUI__CardLabel:(UILabel *)myLabel withCard:(FISPlayingCard *)card {
     myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
+    myLabel.hidden = NO;
 }
 
 // Updates both status labels.
@@ -73,7 +93,7 @@
         self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
     }
     if (self.blackjackGame.isBlackjack) {
-        self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
+        self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Blackjack!"];
     }
 }
 

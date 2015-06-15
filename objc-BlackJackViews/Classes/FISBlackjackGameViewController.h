@@ -23,11 +23,22 @@
 
 @property (nonatomic, strong) NSDictionary *cardLabelsDict;
 
-- (IBAction)dealButtonTapped:(id)sender;
-- (IBAction)hitButtonTapped:(id)sender;
 
--(void)updateUI:(FISBlackjackGame*)thisGame;
+-(void)updateUI;
+-(void)updateUI_CardLabels;
+-(void)updateUI__CardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
+-(void)updateUI_StatusLabels;
+-(void)updateUI__ScoreLabel;
+-(void)updateUI__ResultLabel;
+
+-(void)resetUI;
+-(void)resetUI_CardLabels;
+-(void)resetUI_StatusLabels;
+
+- (IBAction)dealButtonTapped:(id)sender;
 -(void)deal;
+
+- (IBAction)hitButtonTapped:(id)sender;
 -(void)hit;
 
 /*

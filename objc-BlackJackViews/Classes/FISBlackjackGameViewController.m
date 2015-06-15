@@ -39,13 +39,13 @@
     [self.blackjackGame deal];
     [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
     [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
-    [self.blackjackGame tallyHandScore];
+    [self.blackjackGame checkHandScore];
     [self updateUI];
 }
 
 -(void)hit {
     [self.blackjackGame hit];
-    [self.blackjackGame tallyHandScore];
+    [self.blackjackGame checkHandScore];
     [self updateUI];
     
 }

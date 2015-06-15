@@ -26,8 +26,11 @@
 - (IBAction)dealButtonTapped:(id)sender;
 - (IBAction)hitButtonTapped:(id)sender;
 
--(void)updateUI:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
+-(void)updateUI:(FISBlackjackGame*)thisGame;
 -(void)deal;
 -(void)hit;
 
-@end
+/*
+-(void)updateUILabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
+*/
+ @end

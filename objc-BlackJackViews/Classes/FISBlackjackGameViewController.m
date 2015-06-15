@@ -25,9 +25,11 @@
                         @5:_card5};
 }
 
--(void)updateUI:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
+/*
+-(void)updateUILabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
     myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
 }
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,8 +49,8 @@
 
 -(void)deal {
     [self.blackjackGame deal];
-    [self updateUI:self.card1 withCard:self.blackjackGame.hand[0]];
-    [self updateUI:self.card2 withCard:self.blackjackGame.hand[1]];
+    [self updateUILabel:self.card1 withCard:self.blackjackGame.hand[0]];
+    [self updateUILabel:self.card2 withCard:self.blackjackGame.hand[1]];
 }
 
 -(void)hit {
@@ -56,7 +58,7 @@
     NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
     FISPlayingCard *newCard = [self.blackjackGame.hand lastObject];
     UILabel *labelToUpdate = self.cardLabelsDict[@(numberOfCardsInHand)];
-    [self updateUI:labelToUpdate withCard:newCard];
+    [self updateUILabel:labelToUpdate withCard:newCard];
 }
 
 - (IBAction)dealButtonTapped:(id)sender {

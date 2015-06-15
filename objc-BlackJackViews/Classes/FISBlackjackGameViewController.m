@@ -23,37 +23,37 @@
                             @4:self.card4,
                             @5:self.card5};
     [self deal];
-    [self.updateUI];
+    [self updateUI];
 }
 
 -(void)updateUI {
-    [self updateUICardLabels];
-    [self updateUIStatusLabels];
+    [self updateUI_CardLabels];
+    [self updateUI_StatusLabels];
 }
 
 //Updates all the cards.
--(void)updateUICardLabels {
+-(void)updateUI_CardLabels {
     for (NSUInteger i = 0; i < [self.blackjackGame.hand count]; i++) {
-        [self updateUICardLabel:self.cardLabelsDict[@(i)] withCard: self.blackjackGame.hand[i]];
+        [self updateUI__CardLabel:self.cardLabelsDict[@(i)] withCard: self.blackjackGame.hand[i]];
     }
 }
 
 // Updates one card.
--(void)updateUICardLabel:(UILabel *)myLabel withCard:(FISPlayingCard *)card {
+-(void)updateUI__CardLabel:(UILabel *)myLabel withCard:(FISPlayingCard *)card {
     myLabel.text = [NSString stringWithFormat:@"%@ %@", card.rank, card.suit];
 }
 
 // Updates both status labels.
--(void)updateUIStatusLabels {
-    [self updateUIScoreLabel];
-    [self updateUIResultLabel];
+-(void)updateUI_StatusLabels {
+    [self updateUI__ScoreLabel];
+    [self updateUI__ResultLabel];
 }
 
--(void)updateUIScoreLabel {
+-(void)updateUI__ScoreLabel {
     self.scoreLabel.text = [NSString stringWithFormat:@"%@", self.blackjackGame.handScore];
 }
 
--(void)updateUIResultLabel {
+-(void)updateUI__ResultLabel {
     if (self.blackjackGame.isBusted) {
         self.resultLabel.text = [NSString stringWithFormat:@"%@", @"Busted!"];
     }
@@ -65,8 +65,8 @@
 -(void)deal {
     [self.blackjackGame setupNewRound];
     [self.blackjackGame deal];
-    [self updateUICardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
-    [self updateUICardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
+    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
     [self.blackjackGame tallyHandScore];
 }
 

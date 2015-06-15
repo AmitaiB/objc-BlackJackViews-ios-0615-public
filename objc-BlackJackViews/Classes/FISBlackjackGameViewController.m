@@ -17,11 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
-    [self.blackjackGame deal];
-    
-    [self updateCardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
-    [self updateCardLabel:self.card1 withCard:self.blackjackGame.hand[1]];
-    
+    [self deal];
 }
 
 -(void)updateCardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
@@ -43,11 +39,27 @@
 }
 */
 
-- (IBAction)hitButtonTapped:(id)sender {
-    NSLog(@"hitButton works!");
+
+-(void)deal {
+    [self.blackjackGame deal];
+    [self updateCardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
+    [self updateCardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+}
+
+-(void)hit {
+    [self.blackjackGame hit];
+    NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
+    
 }
 
 - (IBAction)dealButtonTapped:(id)sender {
     NSLog(@"dealButton works!");
+    [self deal];
 }
+
+- (IBAction)hitButtonTapped:(id)sender {
+    NSLog(@"hitButton works!");
+    [self.blackjackGame hit];
+}
+
 @end

@@ -21,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
-- (IBAction)hitButtonTapped:(id)sender;
 - (IBAction)dealButtonTapped:(id)sender;
+- (IBAction)hitButtonTapped:(id)sender;
 
 -(void)updateCardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card;
+-(void)deal;
+-(void)hit;
 
 @end

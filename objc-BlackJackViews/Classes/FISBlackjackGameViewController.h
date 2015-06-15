@@ -10,6 +10,4 @@
 
 @interface FISBlackjackGameViewController : UIViewController
 
-
-
 @end

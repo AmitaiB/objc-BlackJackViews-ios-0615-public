@@ -44,17 +44,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="32" y="33" width="127" height="175"/>
-                                </variation>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X61-i5-fA5">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.73301099810000003" green="0.81506927880000002" blue="0.84236900250000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="card2"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="33" width="127" height="175"/>
+                                    <rect key="frame" x="32" y="33" width="125" height="175"/>
                                 </variation>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNJ-Qe-9ci">
@@ -64,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="32" y="222" width="127" height="175"/>
+                                    <rect key="frame" x="32" y="222" width="125" height="175"/>
                                 </variation>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bK-bj-394">
@@ -74,7 +64,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="118" y="405" width="127" height="175"/>
+                                    <rect key="frame" x="118" y="405" width="125" height="175"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2L-QS-Z68">
@@ -104,7 +94,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="197" y="222" width="127" height="175"/>
+                                    <rect key="frame" x="197" y="222" width="125" height="175"/>
+                                </variation>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X61-i5-fA5">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.73301099810000003" green="0.81506927880000002" blue="0.84236900250000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="card2"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="197" y="33" width="125" height="175"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -114,12 +114,12 @@
                                 <exclude reference="XFT-bN-Fui"/>
                                 <exclude reference="TwA-pm-hoG"/>
                                 <exclude reference="wJ7-iK-8iu"/>
-                                <exclude reference="X61-i5-fA5"/>
                                 <exclude reference="eNJ-Qe-9ci"/>
                                 <exclude reference="7bK-bj-394"/>
                                 <exclude reference="z2L-QS-Z68"/>
                                 <exclude reference="3j0-9U-m1Q"/>
                                 <exclude reference="AbM-Qc-wAc"/>
+                                <exclude reference="X61-i5-fA5"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -127,19 +127,19 @@
                                 <include reference="XFT-bN-Fui"/>
                                 <include reference="TwA-pm-hoG"/>
                                 <include reference="wJ7-iK-8iu"/>
-                                <include reference="X61-i5-fA5"/>
                                 <include reference="eNJ-Qe-9ci"/>
                                 <include reference="7bK-bj-394"/>
                                 <include reference="z2L-QS-Z68"/>
                                 <include reference="3j0-9U-m1Q"/>
                                 <include reference="AbM-Qc-wAc"/>
+                                <include reference="X61-i5-fA5"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nS-Sa-Sw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25.5" y="348"/>
+            <point key="canvasLocation" x="-2634" y="344"/>
         </scene>
     </scenes>
 </document>

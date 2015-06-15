@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+@property (nonatomic, strong) NSDictionary *cardLabelsDict;
+
 - (IBAction)dealButtonTapped:(id)sender;
 - (IBAction)hitButtonTapped:(id)sender;
 

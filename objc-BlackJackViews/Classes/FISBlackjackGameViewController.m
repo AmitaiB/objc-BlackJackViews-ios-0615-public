@@ -18,6 +18,11 @@
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
     [self deal];
+    _cardLabelsDict = @{@1:_card1,
+                        @2:_card2,
+                        @3:_card3,
+                        @4:_card4,
+                        @5:_card5};
 }
 
 -(void)updateCardLabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card {
@@ -49,7 +54,9 @@
 -(void)hit {
     [self.blackjackGame hit];
     NSUInteger numberOfCardsInHand = [self.blackjackGame.hand count];
-    
+    FISPlayingCard *newCard = [self.blackjackGame.hand lastObject];
+    UILabel *labelToUpdate = self.cardLabelsDict[@(numberOfCardsInHand)];
+    [self updateCardLabel:labelToUpdate withCard:newCard];
 }
 
 - (IBAction)dealButtonTapped:(id)sender {

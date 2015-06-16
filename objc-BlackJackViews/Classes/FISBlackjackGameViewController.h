@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
-@property (nonatomic, strong) NSDictionary *cardLabelsDict;
+@property (nonatomic, strong) NSMutableDictionary *cardLabelsDict;
 
 
 -(void)updateUI;

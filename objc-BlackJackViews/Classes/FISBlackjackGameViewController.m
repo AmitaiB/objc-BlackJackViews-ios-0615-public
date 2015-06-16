@@ -16,11 +16,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
-    self.cardLabelsDict = @{@1:self.card1,
+    self.cardLabelsDict = [@{@1:self.card1,
                             @2:self.card2,
                             @3:self.card3,
                             @4:self.card4,
-                            @5:self.card5};
+                            @5:self.card5} mutableCopy];
 //    [self deal];
     [self updateUI];
 }

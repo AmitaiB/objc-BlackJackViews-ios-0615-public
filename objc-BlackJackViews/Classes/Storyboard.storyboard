@@ -53,6 +53,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2L-QS-Z68">
+                                <rect key="frame" x="259" y="482" width="45" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="scoreLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbM-Qc-wAc">
                                 <rect key="frame" x="187" y="222" width="125" height="175"/>
                                 <color key="backgroundColor" red="0.73301099810000003" green="0.81506927880000002" blue="0.84236900250000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,13 +74,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ7-iK-8iu">
-                                <rect key="frame" x="32" y="33" width="125" height="175"/>
-                                <color key="backgroundColor" red="0.7330109981243802" green="0.81506927880791147" blue="0.84236900252525249" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration" label="card1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3j0-9U-m1Q">
                                 <rect key="frame" x="28" y="477" width="49" height="21"/>
                                 <accessibility key="accessibilityConfiguration" label="resultLabel"/>
@@ -81,11 +81,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2L-QS-Z68">
-                                <rect key="frame" x="259" y="482" width="45" height="21"/>
-                                <accessibility key="accessibilityConfiguration" label="scoreLabel"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="50" text="card1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ7-iK-8iu">
+                                <rect key="frame" x="32" y="33" width="125" height="175"/>
+                                <color key="backgroundColor" red="0.7330109981243802" green="0.81506927880791147" blue="0.84236900252525249" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="card1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

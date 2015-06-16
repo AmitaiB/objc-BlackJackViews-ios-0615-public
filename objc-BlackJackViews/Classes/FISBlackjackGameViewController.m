@@ -17,7 +17,7 @@
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
     self.cardLabelsArray = @[self.card1, self.card2, self.card3, self.card4, self.card5];
-//    [self deal];
+    [self deal];
     [self updateUI];
 }
 

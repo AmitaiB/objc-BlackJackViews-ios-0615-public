@@ -1,4 +1,3 @@
-//
 //  FISBlackjackGameViewController.m
 //  objc-BlackJackViews
 //
@@ -39,14 +38,19 @@
 
 
 -(void)deal {
+    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
     [self resetUI];
+    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
     [self.blackjackGame deal];
-
+    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
 //    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
 //    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
 
     [self.blackjackGame checkHandScore];
+    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
     [self updateUI];
+    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+
 }
 
 -(void)hit {

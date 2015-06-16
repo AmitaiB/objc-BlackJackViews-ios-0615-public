@@ -30,7 +30,7 @@
 
 //Make sure the hand is empty, then deal.
 -(void)deal {
-//    [self setupNewRound];
+    [self setupNewRound];
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //1
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //2
 //    [self checkHandScore];
@@ -62,7 +62,7 @@
     for (FISPlayingCard *card in self.hand) {
         if ([card.rank isEqualToNumber:@1])
             handIncludesAnAce = YES;
-        if ([card.rank integerValue] > 10)
+        if ([card.rank integerValue] >= 10)
             handScoreTemp += 10;
         else
             handScoreTemp += (NSUInteger)[card.rank integerValue];

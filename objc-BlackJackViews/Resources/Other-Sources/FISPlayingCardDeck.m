@@ -56,9 +56,9 @@
     
     NSUInteger randomFromRemainingCards = (NSUInteger)roundf([self randomFloatBetweenNumber:1 andNumber:(self.cards.count)]);
 
-    NSLog(@"randomFromRemainingCards: %lul", (unsigned long)randomFromRemainingCards);
     FISPlayingCard *drawnCard = (FISPlayingCard*)self.cards[randomFromRemainingCards -1];
     [self.cards removeObjectAtIndex:randomFromRemainingCards -1];
+    NSLog(@"You drew a %@ of %@!", drawnCard.rank, drawnCard.suit);
     
     return drawnCard;
 }

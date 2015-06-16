@@ -16,46 +16,46 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.blackjackGame = [[FISBlackjackGame alloc] init];
-    self.cardLabelsDict = [@{@1:self.card1,
-                            @2:self.card2,
-                            @3:self.card3,
-                            @4:self.card4,
-                            @5:self.card5} mutableCopy];
+    self.cardLabelsArray = @[self.card1, self.card2, self.card3, self.card4, self.card5];
 //    [self deal];
     [self updateUI];
 }
 
-
 -(void)resetUI {
     [self resetUI_CardLabels];
     [self resetUI_StatusLabels];
+    NSLog(@"RESET hand count: %lu", [self.blackjackGame.hand count]);
 }
 
 -(void)updateUI {
+    [self resetUI];
     [self updateUI_StatusLabels];
     [self updateUI_CardLabels];
 }
 
 
 -(void)deal {
-    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+    NSLog(@"NeW gAmE: DEAL1 hand count: %lu", [self.blackjackGame.hand count]);
     [self resetUI];
-    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+    NSLog(@"DEAL2 hand count: %lu", [self.blackjackGame.hand count]);
     [self.blackjackGame deal];
-    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+    NSLog(@"DEAL3 hand count: %lu", [self.blackjackGame.hand count]);
 //    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
 //    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
 
     [self.blackjackGame checkHandScore];
-    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+    NSLog(@"DEAL 4 hand count: %lu", [self.blackjackGame.hand count]);
     [self updateUI];
-    NSLog(@"hand count: %lu", [self.blackjackGame.hand count]);
+    NSLog(@"DEAL 5 hand count: %lu", [self.blackjackGame.hand count]);
 
 }
 
 -(void)hit {
+    NSLog(@"HIT 1 hand count: %lu", [self.blackjackGame.hand count]);
+
     [self.blackjackGame checkHandScore];
     [self.blackjackGame hit];
+    NSLog(@"HIT 2 hand count: %lu", [self.blackjackGame.hand count]);
     [self.blackjackGame checkHandScore];
     [self updateUI];
     
@@ -71,7 +71,7 @@
 
 
 -(void)resetUI_CardLabels {
-    for (UILabel *card in [self.cardLabelsDict allValues]) {
+    for (UILabel *card in self.cardLabelsArray) {
         card.text = @"";
         card.hidden = YES;
     }
@@ -88,7 +88,7 @@
 //    NSArray *dictionaryKeys = @{@1, @2, @3, @4, @5};
     
     for (NSUInteger i = 0; i < [self.blackjackGame.hand count]; i++) {
-        [self updateUI__CardLabel:self.cardLabelsDict[@(i)] withCard: self.blackjackGame.hand[i]];
+        [self updateUI__CardLabel:self.cardLabelsArray[i] withCard: self.blackjackGame.hand[i]];
     }
 }
 
@@ -124,7 +124,7 @@
 
 - (IBAction)hitButtonTapped:(id)sender {
     NSLog(@"hitButton works!");
-    [self.blackjackGame hit];
+    [self hit];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -40,6 +40,8 @@
 
 - (IBAction)hitButtonTapped:(id)sender;
 -(void)hit;
+- (IBAction)resultOnlyButtonTapped:(id)sender;
+- (IBAction)updateUIOnlyButtonTapped:(id)sender;
 
 /*
 -(void)updateUILabel:(UILabel*)myLabel withCard:(FISPlayingCard*)card;

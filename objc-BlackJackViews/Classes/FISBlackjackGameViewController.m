@@ -61,6 +61,14 @@
     
 }
 
+- (IBAction)resultOnlyButtonTapped:(id)sender {
+    [self resetUI];
+}
+
+- (IBAction)updateUIOnlyButtonTapped:(id)sender {
+    [self resetUI];
+}
+
 
 -(void)resetUI_CardLabels {
     for (UILabel *card in [self.cardLabelsDict allValues]) {
@@ -77,6 +85,8 @@
 
 //Updates all the cards.
 -(void)updateUI_CardLabels {
+//    NSArray *dictionaryKeys = @{@1, @2, @3, @4, @5};
+    
     for (NSUInteger i = 0; i < [self.blackjackGame.hand count]; i++) {
         [self updateUI__CardLabel:self.cardLabelsDict[@(i)] withCard: self.blackjackGame.hand[i]];
     }

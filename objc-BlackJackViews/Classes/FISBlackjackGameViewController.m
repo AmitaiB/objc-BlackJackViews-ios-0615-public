@@ -32,38 +32,42 @@
     [self resetUI_StatusLabels];
 }
 
+-(void)updateUI {
+    [self updateUI_StatusLabels];
+    [self updateUI_CardLabels];
+}
 
 
 -(void)deal {
-    [self.blackjackGame setupNewRound];
+    [self resetUI];
     [self.blackjackGame deal];
-    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
-    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+
+//    [self updateUI__CardLabel:self.card1 withCard:self.blackjackGame.hand[0]];
+//    [self updateUI__CardLabel:self.card2 withCard:self.blackjackGame.hand[1]];
+
     [self.blackjackGame checkHandScore];
     [self updateUI];
 }
 
 -(void)hit {
+    [self.blackjackGame checkHandScore];
     [self.blackjackGame hit];
     [self.blackjackGame checkHandScore];
     [self updateUI];
     
 }
 
--(void)updateUI {
-    [self updateUI_CardLabels];
-    [self updateUI_StatusLabels];
-}
 
 -(void)resetUI_CardLabels {
-    for (UILabel *card in self.cardLabelsDict) {
+    for (UILabel *card in [self.cardLabelsDict allValues]) {
         card.text = @"";
         card.hidden = YES;
     }
 }
 
+//Problem area!
 -(void)resetUI_StatusLabels {
-    self.scoreLabel.text = @"%@";
+    self.scoreLabel.text = [NSString stringWithFormat:@"%@", self.blackjackGame.handScore];
     self.resultLabel.text = @"";
 }
 

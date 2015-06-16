@@ -30,10 +30,11 @@
 
 //Make sure the hand is empty, then deal.
 -(void)deal {
-    [self setupNewRound];
+//    [self setupNewRound];
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //1
     [self.hand addObject:[self.playingCardDeck drawRandomCard]]; //2
-    [self checkHandScore];
+//    [self checkHandScore];
+    NSLog(@"deal closure");
 }
 
 //After dealing, hit to add a card, until blackjack or bust.
@@ -64,7 +65,7 @@
         if ([card.rank integerValue] > 10)
             handScoreTemp += 10;
         else
-            handScoreTemp += [card.rank integerValue];
+            handScoreTemp += (NSUInteger)[card.rank integerValue];
     }
     NSLog(@"FROM inside checkHandScore, BEFORE accounting for Aces. handScoreTemp = %lu", (unsigned long)handScoreTemp);
     
